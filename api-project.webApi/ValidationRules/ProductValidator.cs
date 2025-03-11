@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace api_project.webApi.ValidationRules
 {
-    public class ProductValidator:AbstractValidator<Product>
+    public class ProductValidator: AbstractValidator<Product>
     {
         public ProductValidator()
         {
@@ -12,7 +12,7 @@ namespace api_project.webApi.ValidationRules
             RuleFor(x => x.ProductName).MaximumLength(50).WithMessage("max 50 characters!");
 
             RuleFor(x => x.Price).NotEmpty().WithMessage("price required!")
-                .LessThan(0).WithMessage("price can't be 0!");
+                .GreaterThan(0).WithMessage("price can't be 0!");
 
             RuleFor(x => x.ProductDescription).NotEmpty().WithMessage("description required!");
         }
