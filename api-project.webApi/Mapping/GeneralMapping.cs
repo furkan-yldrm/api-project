@@ -1,5 +1,6 @@
 ﻿using api_project.webApi.Dto.FeatureDto;
 using api_project.webApi.Dto.MessageDto;
+using api_project.webApi.Dto.ProductDto;
 using api_project.webApi.Entities;
 using AutoMapper;
 
@@ -18,6 +19,8 @@ namespace api_project.webApi.Mapping
             CreateMap<Message, ResultMessageDto>().ReverseMap();
             CreateMap<Message, GetByIdMessageDto>().ReverseMap();
             CreateMap<Message, UpdateMessageDto>().ReverseMap();
+
+            CreateMap<Product, CreateProductDto>().ReverseMap();
         }
 
     }
